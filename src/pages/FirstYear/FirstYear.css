@@ -1,0 +1,11 @@
+.divider {
+    border-right: 1px solid #333;
+}
+
+.item:hover {
+    background-color: whitesmoke;
+}
+
+.row {
+    color: black;
+}
