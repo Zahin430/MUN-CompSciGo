@@ -11,9 +11,6 @@ function Navbar({ currentUser }){
                 PROJECT NAME
             </Link>
             </span>
-                
-
-
             {
                 currentUser ?
                 <span onClick = {() => auth.signOut()} style= {{textDecoration: 'none', color: 'black', cursor: 'pointer'}}>

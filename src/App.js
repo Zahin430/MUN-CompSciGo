@@ -15,6 +15,8 @@ import Navbar from './components/Navbar/Navbar';
 import SignInAndSignUpPage from './pages/Sign-In-And-Sign-Up-Page/Sign-in-and-Sign-Up-Page';
 import { auth } from './firebase/firebase.utils';
 
+import './App.css'
+
 class App extends React.Component {
   constructor() {
     super();
