@@ -2,12 +2,17 @@ import React from 'react';
 
 
 import {
-    Link
+    Link,
+    Route
   } from "react-router-dom";
 
 import './FirstYear.css';
+import CoursePage from '../../pages/CoursePage/CoursePage';
 
-function FirstYear() {    
+function FirstYear({ match }) { 
+    console.log(match.path.id);
+    console.log(match.url);
+       
     const courses = [
         {
             "name": "Computer Science – An Introduction",
@@ -43,22 +48,23 @@ function FirstYear() {
         },
     ]
 
+
     const list = courses.map((item) => 
         <li className="list-group-item item">
-            <Link to = {`/${item.id}`} style ={{ textDecoration: 'none'}}>
+            <Link to = {`${match.path}/${item.id}`} style ={{ textDecoration: 'none'}}>
                 <div class="row">
                     <div class="col divider">
-                    {item.name}
+                        {item.name}
                     </div>
                     <div class="col">
-                    {item.id}
+                        {item.id}
                     </div>
                 </div>
             </Link>
         </li>
     )
 
-    
+
     return (
         <div className = "container">
         <ul className="list-group p-4">
@@ -66,15 +72,17 @@ function FirstYear() {
             <div className= 'list-group-item'>
                 <div class="row">
                 <div class="col divider">
-                NAME
+                    NAME 
                 </div>
                 <div class="col">
-                COURSE ID
+                    COURSE ID
                 </div>
             </div>      
             </div>
             {list}
             </ul>
+
+        <Route path = {`${match.path}/:id`} component = {CoursePage} />
         </div>
         
     );
