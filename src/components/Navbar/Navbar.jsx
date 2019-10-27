@@ -1,7 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 
-function Navbar(){
+import { auth } from '../../firebase/firebase.utils';
+
+function Navbar({ currentUser }){
     return (
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h1">
@@ -10,9 +12,17 @@ function Navbar(){
             </Link>
             </span>
                 
-            <Link to ='/login' style= {{textDecoration: 'none', color: 'black'}}>
-                Login
-            </Link>
+
+
+            {
+                currentUser ?
+                <span onClick = {() => auth.signOut()} style= {{textDecoration: 'none', color: 'black', cursor: 'pointer'}}>
+                    Log Out
+                </span>                :
+                <Link to ='/signIn' style= {{textDecoration: 'none', color: 'black'}}>
+                    Login
+                </Link>
+            }
         </nav>
     );
 }

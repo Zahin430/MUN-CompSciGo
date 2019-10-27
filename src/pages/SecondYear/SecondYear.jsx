@@ -6,7 +6,7 @@ function SecondYear() {
     const courses = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2100", "2300", "2500", "2510", "2718"];
     const list = courses.map((item) => 
         <li className="list-group-item">
-            <Link to = {`/${item}`}>
+            <Link to = {`second/${item}`}>
             <div class="row">
                 <div class="col">
                 
