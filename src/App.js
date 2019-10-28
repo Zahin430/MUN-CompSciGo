@@ -13,7 +13,10 @@ import ThirdYear from './pages/ThirdYear/ThirdYear';
 import FourthYear from './pages/FourthYear/FourthYear';
 import Navbar from './components/Navbar/Navbar';
 import SignInAndSignUpPage from './pages/Sign-In-And-Sign-Up-Page/Sign-in-and-Sign-Up-Page';
+import CoursePage from './pages/CoursePage/CoursePage';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+
 
 import './App.css'
 
@@ -61,11 +64,12 @@ class App extends React.Component {
       <Navbar currentUser = {this.state.currentUser} />
       <Switch>     
           <Route component = {Homepage} exact path="/" />
-          <Route component = {FirstYear} path="/first" />      
-          <Route component = {SecondYear} path="/second" />      
-          <Route component = {ThirdYear} path="/third" />      
-          <Route component = {FourthYear} path="/fourth" /> 
-          <Route component = {SignInAndSignUpPage} path = "/signIn"/>  
+          <Route component = {FirstYear} exact path="/first" />      
+          <Route component = {SecondYear} exact path="/second" />      
+          <Route component = {ThirdYear} exact  path="/third" />      
+          <Route component = {FourthYear} exact path="/fourth" /> 
+          <Route component = {SignInAndSignUpPage} path = "/signIn"/>
+          <Route path = {'/first/:courseId'} component = {CoursePage} />
       </Switch>
       </Router>
       </div>

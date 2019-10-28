@@ -8,7 +8,7 @@ function Navbar({ currentUser }){
         <nav className="navbar navbar-light bg-light">
             <span className="navbar-brand mb-0 h1">
             <Link to ='/' style= {{textDecoration: 'none', color: 'black'}}>
-                PROJECT NAME
+                MUN COMPSCI
             </Link>
             </span>
             {
