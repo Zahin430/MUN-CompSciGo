@@ -11,7 +11,7 @@ import FirstYear from './pages/FirstYear/FirstYear';
 import SecondYear from './pages/SecondYear/SecondYear';
 import ThirdYear from './pages/ThirdYear/ThirdYear';
 import FourthYear from './pages/FourthYear/FourthYear';
-import Navbar from './components/Navbar/Navbar';
+import {Navbar} from './components/Navbar/Navbar';
 import SignInAndSignUpPage from './pages/Sign-In-And-Sign-Up-Page/Sign-in-and-Sign-Up-Page';
 import CoursePage from './pages/CoursePage/CoursePage';
 
@@ -25,53 +25,52 @@ class App extends React.Component {
     super();
 
     this.state = {
-      currentUser: null
-    }
+      currentUser: null,
+    };
   }
 
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if(userAuth) {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
-        
-        userRef.onSnapshot(snapShot => {          
-          this.setState({ 
+
+        userRef.onSnapshot((snapShot) => {
+          this.setState({
             currentUser: {
               id: snapShot.id,
-              ...snapShot.data()
-            }
+              ...snapShot.data(),
+            },
           });
 
           console.log(this.state);
-        })
+        });
       } else {
-        this.setState({currentUser: userAuth })
+        this.setState({ currentUser: userAuth });
       }
-    })    
+    });
   }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
-  
 
   render() {
     return (
       <div className="App">
-      <Router>
-      <Navbar currentUser = {this.state.currentUser} />
-      <Switch>     
-          <Route component = {Homepage} exact path="/" />
-          <Route component = {FirstYear} exact path="/first" />      
-          <Route component = {SecondYear} exact path="/second" />      
-          <Route component = {ThirdYear} exact  path="/third" />      
-          <Route component = {FourthYear} exact path="/fourth" /> 
-          <Route component = {SignInAndSignUpPage} path = "/signIn"/>
-          <Route path = {'/first/:courseId'} component = {CoursePage} />
-      </Switch>
-      </Router>
+        <Router>
+          <Navbar currentUser={this.state.currentUser} />
+          <Switch>
+            <Route component={Homepage} exact path="/" />
+            <Route component={FirstYear} exact path="/first" />
+            <Route component={SecondYear} exact path="/second" />
+            <Route component={ThirdYear} exact path="/third" />
+            <Route component={FourthYear} exact path="/fourth" />
+            <Route component={SignInAndSignUpPage} path="/signIn" />
+            <Route path={"/first/:courseId"} component={CoursePage} />
+          </Switch>
+        </Router>
       </div>
     );
   }

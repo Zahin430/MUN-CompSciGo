@@ -1,0 +1,116 @@
+{
+    "courses": [
+        {
+            "id": 0,
+            "name": "COMP1000"
+        },
+        {
+            "id": 1,
+            "name": "COMP1001"
+        },
+        {
+            "id": 2,
+            "name": "COMP1002"
+        },
+        {
+            "id": 3,
+            "name": "COMP1003"
+        },
+        {
+            "id": 4,
+            "name": "COMP2000"
+        },
+        {
+            "id": 5,
+            "name": "COMP2001"
+        },
+        {
+            "id": 6,
+            "name": "COMP2002"
+        },
+        {
+            "id": 7,
+            "name": "COMP2003"
+        },
+        {
+            "id": 8,
+            "name": "COMP2004"
+        }
+    ],
+    "reviews": [
+        {
+            "id": 0,
+            "for_courses": [
+                1
+            ],
+            "rating": 1,
+            "comment": "Comp1001 was a poor course!"
+        },
+        {
+            "id": 1,
+            "for_courses": [
+                1
+            ],
+            "rating": 10,
+            "comment": "COMP1001 was a great Course!"
+        },
+        {
+            "id": 2,
+            "for_courses": [
+                3
+            ],
+            "rating": 7,
+            "comment": "Average Course!"
+        },
+        {
+            "id": 3,
+            "for_courses": [
+                4
+            ],
+            "rating": 5,
+            "comment": "Overall the structure of the course is decent!"
+        },
+        {
+            "id": 4,
+            "for_courses": [
+                0,
+                1,
+                3
+            ],
+            "rating": 10,
+            "comment": "Great Course!"
+        },
+        {
+            "id": 5,
+            "for_courses": [
+                7
+            ],
+            "rating": 6,
+            "comment": "Decent Course!"
+        },
+        {
+            "id": 6,
+            "for_courses": [
+                5
+            ],
+            "rating": 8,
+            "comment": "Average Course Material!"
+        },
+        {
+            "id": 7,
+            "for_courses": [
+                1
+            ],
+            "rating": 9,
+            "comment": "Not useful Course!"
+        },
+        {
+            "id": 8,
+            "for_courses": [
+                6
+            ],
+            "rating": 10,
+            "comment": "Great Course!"
+        }
+    ]
+}
